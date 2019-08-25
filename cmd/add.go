@@ -43,15 +43,13 @@ to quickly create a Cobra application.`,
 		log.Println("add called")
 		log.Println(Green("开始"))
 		home := os.Getenv("HOME")
-		fileName := fmt.Sprintf("%s%s%s", home, string(os.PathSeparator), ".l.toml")
-
-        log.Println(Green(fileName))
-		if _, err := os.Stat(fmt.Sprintf("%s%s", home, fileName)); os.IsNotExist(err) {
-
+        fileName := fmt.Sprintf("%s%c%s", home, os.PathSeparator, ".l.toml")
+		if _, err := os.Stat(home); os.IsNotExist(err) {
 			if _, err := os.Create(fileName); err != nil {
 				log.Fatalln(Red("配置文件不存在或创建失败"))
 			}
 		}
+        log.Println(Green(fmt.Sprintf("配置文件目录:%s", fileName)))
 	},
 }
 
