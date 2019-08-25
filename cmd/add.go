@@ -22,9 +22,11 @@ THE SOFTWARE.
 package cmd
 
 import (
-	"fmt"
-
+	. "github.com/logrusorgru/aurora"
 	"github.com/spf13/cobra"
+	"log"
+	"os"
+    "fmt"
 )
 
 // addCmd represents the add command
@@ -38,7 +40,18 @@ and usage of using your command. For example:
 This application is a tool to generate the needed files
 to quickly create a Cobra application.`,
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("add called")
+		log.Println("add called")
+		log.Println(Green("开始"))
+		home := os.Getenv("HOME")
+		fileName := fmt.Sprintf("%s%s%s", home, string(os.PathSeparator), ".l.toml")
+
+        log.Println(Green(fileName))
+		if _, err := os.Stat(fmt.Sprintf("%s%s", home, fileName)); os.IsNotExist(err) {
+
+			if _, err := os.Create(fileName); err != nil {
+				log.Fatalln(Red("配置文件不存在或创建失败"))
+			}
+		}
 	},
 }
 

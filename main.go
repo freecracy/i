@@ -23,6 +23,7 @@ package main
 
 import "github.com/freecracy/l/cmd"
 
+//go:generate gofmt -s -w .
 func main() {
-  cmd.Execute()
+	cmd.Execute()
 }
