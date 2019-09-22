@@ -1,6 +1,6 @@
 #!/bin/sh
 
 
-curl https://raw.githubusercontent.com/freecracy/l/master/l.sh 
-chmod +x l.sh
-mv l.sh /usr/local/bin/l
+curl https://raw.githubusercontent.com/freecracy/l/master/b.sh 
+chmod +x b.sh
+mv b.sh /usr/local/bin/b
