@@ -1,6 +1,12 @@
 #!/bin/sh
 
 
-curl https://raw.githubusercontent.com/freecracy/l/master/b.sh 
-chmod +x b.sh
-mv b.sh /usr/local/bin/b
+curl https://raw.githubusercontent.com/freecracy/l/master/b.sh > b
+chmod +x b
+mv b /usr/local/bin/b
+
+cat <<-'EOF'
+
+   b help
+
+EOF
