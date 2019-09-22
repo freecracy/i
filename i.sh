@@ -28,12 +28,12 @@ if [[ $command == "help" ||  $command == "-h" || $command == "--help" ]] ; then
     cat <<-'EOF'
 
 Use Age:
-    l add tcp port [port]
-    l rm tcp port [port]
-    l add udp port [port]
-    l rm udp port [port]
-    l list port
-    l list all
+    i add tcp port [port]
+    i rm tcp port [port]
+    i add udp port [port]
+    i rm udp port [port]
+    i list port
+    i list all
    
 EOF
 fi
